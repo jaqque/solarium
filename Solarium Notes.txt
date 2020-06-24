@@ -1,0 +1,104 @@
+SOLARIZED HEX         TERMCOL        L*a*b*            RGB
+--------- -------     -------        ----------        -----------
+base03    #002b36     brblack        15 -12 -12          0  43  54
+base02    #073642     black          20 -12 -12          7  54  66
+base01    #586e75     brgreen        45 -07 -07         88 110 117
+base00    #657b83     bryellow       50 -07 -07        101 123 131
+base0     #839496     brblue         60 -06 -03        131 148 150
+base1     #93a1a1     brcyan         65 -05 -02        147 161 161
+base2     #eee8d5     white          92 -00  10        238 232 213
+base3     #fdf6e3     brwhite        97  00  10        253 246 227
+yellow    #b58900     yellow         60  10  65        181 137   0
+orange    #cb4b16     brred          50  50  55        203  75  22
+red       #dc322f     red            50  65  45        220  50  47
+magenta   #d33682     magenta        50  65 -05        211  54 130
+violet    #6c71c4     brmagenta      50  15 -45        108 113 196
+blue      #268bd2     blue           55 -10 -45         38 139 210
+cyan      #2aa198     cyan           60 -35 -05         42 161 152
+green     #859900     green          60 -20  65        133 153   0
+
+Solarized uses L+5
+          ANSI          HEX
+          Solar L*a*b*  L+0       L+5       L+10      L+15
+black     15 -12 -12    #002b36   #073642   #16414d   #234d59 # 5 good, 10 better, 15 nah
+red       50  65  45    #dc322f   #ec433b   #fc5246   #ff6152 # 5 is good, 10 better, 15 no
+green     60 -20  65    #859900   #93a707   #a1b420   #afc231 # 5 is meh, 10 good, 15 better
+yellow    60  10  65    #b58900   #c39616   #d2a328   #e1b037 # 5 is meh, 10 good, 15 better
+blue      55 -10 -45    #268bd2   #3b98e0   #4da6ee   #5db3fd # 5 meh, 10 ok, 15 beter
+magenta   50  65 -05    #d33682   #e2468f   #f1559c   #ff64aa # 5 meh, 10 better, 15 good
+cyan      60 -35 -05    #2aa198   #3cafa5   #4dbdb3   #5ccbc0 # 5 meh, 10 good, 15 ok
+white     60 -06 -03    #839496   #93a1a3   #9faeb0   #adbcbe # 5 meh, 10 good, 15 ok
+
+white L+5 != base1; b* is different
+
+https://www.e-paint.co.uk/Convert_Lab.asp
+uses CIELAB D50 and sRGB
+
+https://www.nixsensor.com/free-color-converter/
+Selectable reference illumination and angle
+Uncertain if RGB(linear) or sRGB
+Testing shows D50 2º
+
+
+https://www.colortools.net/color_compare_colors.html
+side by side comparison
+
+black is base03
+bright black should be base02
+white is base0
+bright white should be base1
+
+bash/zsh: (removes embedded and trailing commas)
+hex3 () {
+  printf '#'
+  while [[ -n $1 ]]
+  do
+    printf '%02x' "${1//,/}"
+    shift
+  done
+  printf '\n'
+}
+
+dash/sh: (removes trailing commas)
+hex3 () {
+  printf '#'
+  while [ "$1" ]
+  do
+    printf '%02x' "${1%,}"
+    shift
+  done
+  printf '\n'
+}
+
+
+Methodology:
+
+Terminals use the bright colors to convey information. Solarized loses that
+information my maintaining unnecessary background colors, and NON-ANSI colors.
+
+Starting with the Solarized Dark base[1]:
+
+Take the L*a*b*[2] colors of Solarized for the ANSI colors,
+using e-paint.co.uk[3] converstion tool, increase the L* by 5, 10, and 15.
+
+Compare the base color with the highlighted using  Color Tools.Net[4] compare color tools to get a feel for which lightness difference looks best, and is obvious enough.
+
+Sticking with the black/base03, do a color contrast test[5] to ensure minimum contrast levels.
+AA as a minimum, AAA is ideal.
+
+This is aimed at Terminal use, not for any sort of editor or web CSS scheme.
+Using various color wheel tools, I have tried to recreate where Ethan got the original colors from. I have not suceeded. Case in point, white/base0 with L* increased by 5 is not base1, whereas the difference between base03 and base02 is L* of 5.
+
+I am not so concerned about the contrast between black and bright black, as no one should be using bright black on black.
+
+[1] Previous testing of contrast showed Solarized Light has inadequate contrast. Moreso, I prefer a dark terminal.
+
+[2] Ethan misspells L*a*b* a lot.
+
+[3] https://www.e-paint.co.uk/Convert_Lab.asp
+
+[4] https://www.colortools.net/color_compare_colors.html
+
+[5] https://webaim.org/resources/contrastchecker/
+    https://contrastchecker.com/
+    https://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333
