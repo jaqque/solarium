@@ -1,0 +1,73 @@
+Contrast checking:
+
+https://duckduckgo.com/?t=ffab&q=color+contrast+test&ia=web
+https://webaim.org/resources/contrastchecker/
+https://contrastchecker.com/
+https://snook.ca/technical/colour_contrast/colour.html#fg=FC5246,bg=002B36
+
+Color conversion (RGB/CMYK/L*a*b*/etc)
+
+https://duckduckgo.com/?t=ffab&q=lab+conversion&ia=web
+https://www.e-paint.co.uk/Convert_lab.asp
+https://stackoverflow.com/questions/3915410/how-to-convert-srgb-to-cielab-and-cielab-to-srgb-efficiently
+https://en.wikipedia.org/wiki/CIELAB_color_space
+https://en.wikipedia.org/wiki/SRGB
+https://www.mathworks.com/help/vision/ref/colorspaceconversion.html
+
+Color Differences
+
+https://sensing.konicaminolta.us/us/blog/identifying-color-differences-using-l-a-b-or-l-c-h-coordinates/
+https://en.wikipedia.org/wiki/CIELAB_color_space
+https://ethanschoonover.com/solarized/
+https://duckduckgo.com/?q=color+picker+lab&t=ffab&ia=web
+https://www.nixsensor.com/free-color-converter/
+https://color.adobe.com/create/color-wheel
+http://davidjohnstone.net/pages/lch-lab-colour-gradient-picker
+http://colorizer.org/new/
+https://en.wikipedia.org/wiki/ANSI_escape_code
+https://www.imagemagick.org/discourse-server/viewtopic.php?t=29450
+
+Color wheel
+
+https://duckduckgo.com/?q=interactive+color+wheel+cielab&t=ffab&ia=web
+https://www.rapidtables.com/web/color/color-wheel.html
+https://campchroma.com/color-strategist-color-wheel/
+https://www.xrite.com/blog/lab-color-space
+https://www.sessions.edu/color-calculator/
+https://www.canva.com/colors/color-wheel/
+https://thevirtualinstructor.com/members/interactive-color-wheel/
+
+Color comparison
+
+https://duckduckgo.com/?t=ffab&q=color+comparison+lab&ia=web
+https://www.colortools.net/color_compare_colors.html
+
+Thesaurus
+
+https://www.thesaurus.com/browse/solarium
+
+Visual Perception
+
+https://duckduckgo.com/?t=ffab&q=cielab+visual+perception&ia=web
+https://en.wikipedia.org/wiki/Color_difference
+https://upload.wikimedia.org/wikipedia/commons/f/f4/CIExy1931_MacAdam.png
+https://www.researchgate.net/post/Human_eye_color_change_sensibility_in_CIELAB_units
+
+Colorspace conversion
+
+https://duckduckgo.com/?t=ffab&q=colorspace+conversion&ia=web
+https://imagemagick.org/script/color-management.php
+https://duckduckgo.com/?t=ffab&q=convert+lab+to+srgb&ia=web
+http://colormine.org/convert/rgb-to-lab
+https://duckduckgo.com/?t=ffab&q=lab+set+whitepoint&ia=web
+https://en.wikipedia.org/wiki/Illuminant_D65
+https://en.wikipedia.org/wiki/Standard_illuminant
+https://www.photo.net/discuss/threads/what-is-the-difference-between-5000k-6500k-and-d50-d65.163457/
+
+Color comparison
+
+https://www.colortools.net/color_compare_colors.html
+https://duckduckgo.com/?q=git+new+unattached+branch&t=ffab&ia=web
+https://stackabuse.com/git-create-a-new-branch/
+https://pages.github.com/
+https://duckduckgo.com/?q=create+new+unattached+branch&t=ffab&ia=web
