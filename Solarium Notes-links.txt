@@ -13,6 +13,7 @@ https://stackoverflow.com/questions/3915410/how-to-convert-srgb-to-cielab-and-ci
 https://en.wikipedia.org/wiki/CIELAB_color_space
 https://en.wikipedia.org/wiki/SRGB
 https://www.mathworks.com/help/vision/ref/colorspaceconversion.html
+https://convertingcolors.com/cmyk-color-0.88_0.77_0.00_0.00.html?search=cmyk(.88,.77,0,0)
 
 Color Differences
 

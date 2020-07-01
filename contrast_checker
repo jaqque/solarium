@@ -1,0 +1,64 @@
+#!/bin/zsh
+
+if [[ $# -ne 2 ]]; then
+  echo "No dice."
+  exit 1
+fi
+
+# https://dev.to/alvaromontoro/building-your-own-color-contrast-checker-4j7o
+
+L() {
+  c="$1"; # already normalized to XXXXXX format
+  R8bit=${c%????}
+  G8bit=${${c%??}#??}
+  B8bit=${c#????}
+
+  RsRGB=$(( 16#$R8bit/255.0 ))
+  GsRGB=$(( 16#$G8bit/255.0 ))
+  BsRGB=$(( 16#$B8bit/255.0 ))
+
+  if (( RsRGB <= 0.03928 )); then
+    R=$(( RsRGB/12.92 ))
+  else
+    R=$(( ((RsRGB+0.055)/1.055) ** 2.4 ))
+  fi
+
+  if (( GsRGB <= 0.03928 )); then
+    G=$(( GsRGB/12.92 ))
+  else
+    G=$(( ((GsRGB+0.055)/1.055) ** 2.4 ))
+  fi
+
+  if (( BsRGB <= 0.03928 )); then
+    B=$(( BsRGB/12.92 ))
+  else
+    B=$(( ((BsRGB+0.055)/1.055) ** 2.4 ))
+  fi
+
+  L=$(( 0.2126 * R + 0.7152 * G + 0.0722 * B ))
+
+  echo $L
+}
+
+c1=${1#\#}
+c2=${2#\#}
+
+L1=$(L $c1)
+L2=$(L $c2)
+
+if (( L1 > L2 )); then
+  CR=$(( (L1 + 0.05) / (L2 + 0.05) ))
+else
+  CR=$(( (L2 + 0.05) / (L1 + 0.05) ))
+fi
+
+printf '%0.2f (%0.2f:%0.2f)\n' $CR $(( L1*20 +1 )) $(( L2*20 +1 ))
+if (( CR > 7 )); then
+  echo "AAA Pass"
+elif (( CR > 4.5 )); then
+  echo "AA Pass"
+elif (( CR >3 )); then
+  echo "AA for large text Pass (not good enough)"
+else
+  echo "--fail--"
+fi

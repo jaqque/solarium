@@ -71,6 +71,11 @@ hex3 () {
 }
 
 
+https://www.researchgate.net/post/Human_eye_color_change_sensibility_in_CIELAB_units
+Aim for Delta E of >5 between normal and bright colors
+ΔL ≅ 10 seems good
+
+
 Methodology:
 
 Terminals use the bright colors to convey information. Solarized loses that
